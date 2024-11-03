@@ -1,0 +1,327 @@
+{
+  // Basic settings
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "workbench.iconTheme": "vscode-icons",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "workbench.tree.indent": 18,
+  "editor.renderWhitespace": "trailing",
+  "remote.autoForwardPortsSource": "hybrid",
+  "explorer.confirmDelete": false,
+  "workbench.editor.enablePreview": false,
+  "editor.cursorBlinking": "phase", // カーソル点滅がまろやかに
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.showUnlinkedFileNotification": false,
+  "rust-analyzer.completion.autoimport.enable": false,
+  "window.commandCenter": false,
+  "files.exclude": {
+    "**/.git": false
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Ptyhon settings
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  // Rust settings
+  "[rust]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  // Web development settings
+  "prettier.tabWidth": 2,
+  "editor.tabSize": 2,
+  "prettier.useTabs": false,
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // Vim settings
+  "vim.easymotion": true, // 文字列カーソルジャンプ拡張機能
+  "vim.easymotionKeys": "asdfghjklwertuiop", // easymotionの候補キーを設定
+  "vim.hlsearch": true, // easymotionのフォントを変更
+  "vim.foldfix": true, // 折りたたみ箇所を開かないように変更
+  "vim.highlightedyank.enable": true, // camelCaseMotionを有効化
+  "vim.ignorecase": true, // ignorecaseを有効化
+  "vim.incsearch": true, // incsearchを有効化
+  "vim.leader": "<space>", // leaderキーを設定
+  "vim.useCtrlKeys": true, // Ctrlキー拡張を有効化
+  "vim.useSystemClipboard": true, // クリップボードを使用
+  "vim.visualstar": true, // visualstarを有効化
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // xのときはレジスタに入れない
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
+    },
+    // sのときはレジスタに入れない
+    {
+      "before": ["s"],
+      "after": ["\"", "_", "s"]
+    },
+    // dのときはレジスタに入れない
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    // sインデント
+    // ">>"を">"にしている
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    // "<<"を"<"にしている
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    //水平に開く
+    {
+      "before": ["<Leader>", "s"],
+      "commands": [":sp"]
+    },
+    //垂直に開く
+    {
+      "before": ["<Leader>", "v"],
+      "commands": [":vs"]
+    },
+    // カーソル位置の上行に新しい行を挿入
+    {
+      "before": ["<Leader>", "o"],
+      "commands": ["editor.action.insertLineAfter"]
+    },
+    // カーソル位置の下行に新しい行を挿入
+    {
+      "before": ["<Leader>", "O"],
+      "commands": ["editor.action.insertLineBefore"]
+    },
+    // 検索結果に遷移したとき画面中央に表示する
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["*"],
+      "after": ["*", "z", "z"]
+    },
+    {
+      "before": ["#"],
+      "after": ["#", "z", "z"]
+    },
+    // デフォルトの"H"と"L"は使わないので別のものを割り当て
+    // ^は押しづらいので"H"で行頭
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    // $は押しづらいので"L"で行末
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    // <Leader> + h,j,k,l でウィンドウ移動
+    {
+      "before": ["<Leader>", "h"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["<Leader>", "j"],
+      "after": ["<C-w>", "j"]
+    },
+    {
+      "before": ["<Leader>", "k"],
+      "after": ["<C-w>", "k"]
+    },
+    {
+      "before": ["<Leader>", "l"],
+      "after": ["<C-w>", "l"]
+    },
+    // カーソル位置の単語をマルチカーソルで選択
+    // 複数回<C-n>を押すことで複数選択可能
+    { "before": ["<C-n>"], "after": ["g", "b"] },
+    { "before": ["<C-k>"], "commands": ["acceptSelectedSuggestion"] },
+    // 前のタブを表示
+    { "before": ["g", "r"], "after": ["g", "T"] },
+    // ハイライトクリア
+    { "before": ["<leader>", "/"], "commands": [":noh"] },
+    // ファイル保存
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.terminal.killEditor"]
+    },
+    // プレビュー表示を開いたままにする
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.keepEditor"]
+    },
+    // サイドバーの開閉
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    // 新規ファイル
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.files.action.createFileFromExplorer"]
+    },
+    // クイックオープンを開く
+    { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
+    // ワークスペース内シンボル検索
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    // ファイルエクスプローラーを選択
+    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+    // 変数の型定義を参照
+    {
+      "before": ["<leader>", "g", "d"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    // 変数の参照箇所を参照
+    {
+      "before": ["<leader>", "g", "f"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    // パネルの開閉
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.togglePanel"]
+    },
+    // 前に戻る
+    {
+      "before": ["C-h"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    // 次に進む
+    {
+      "before": ["C-l"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    // 上移動
+    { "before": ["K"], "after": ["5", "k"] },
+    // 下移動
+    { "before": ["J"], "after": ["5", "j"] }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    // サジェストを発火させる
+    {
+      "before": ["<C-m>"],
+      "commands": ["editor.action.triggerSuggest"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    // カーソル位置の単語をマルチカーソルで選択
+    { "before": ["<C-n>"], "after": ["g", "b"] },
+    // 上移動
+    { "before": ["K"], "after": ["5", "k"] },
+    // 下移動
+    { "before": ["J"], "after": ["5", "j"] },
+    // 左端に移動
+    {
+      "before": ["H"],
+      "after": ["0"]
+    },
+    // 右端に移動
+    {
+      "before": ["L"],
+      "after": ["$", "h"]
+    }
+  ],
+
+  // Git/GitHub settings
+  "git.confirmSync": false,
+  "githubPullRequests.createOnPublishBranch": "never",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  // Better comments
+  "better-comments.tags": [
+    {
+      "tag": "todo",
+      "color": "#FFA726 ",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+    // {
+    //   "tag": "!",
+    //   "color": "#E57373",
+    //   "strikethrough": false,
+    //   "underline": false,
+    //   "backgroundColor": "transparent",
+    //   "bold": false,
+    //   "italic": false
+    // },
+    // {
+    //   "tag": "?",
+    //   "color": "#64B5F6",
+    //   "strikethrough": false,
+    //   "underline": false,
+    //   "backgroundColor": "transparent",
+    //   "bold": false,
+    //   "italic": false
+    // },
+    // {
+    //   "tag": "*",
+    //   "color": "#A5D6A7",
+    //   "strikethrough": false,
+    //   "underline": false,
+    //   "backgroundColor": "transparent",
+    //   "bold": false,
+    //   "italic": false
+    // }
+  ],
+  "codeium.enableConfig": {
+    "*": false
+  },
+
+  "code-runner.executorMap": {
+    "typescript": "deno run -A"
+  },
+  "autoDocstring.docstringFormat": "numpy",
+  "github.copilot.chat.inlineChatCompletionTrigger.enabled": true,
+  "github.copilot.chat.localeOverride": "ja",
+  "workbench.colorTheme": "Default Dark+"
+}
